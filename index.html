@@ -1,0 +1,891 @@
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pampek Cihuyy - Pampek Palembang Asli & Halal</title>
+<meta name="description" content="Pampek Cihuyy - Pempek Palembang asli, halal, fresh, tanpa pengawet. Pesan sekarang!" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+/* ================= RESET & BASE ================= */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Poppins',sans-serif;
+  color:#2b2b2b;
+  line-height:1.6;
+  background:#fffaf3;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;}
+ul{list-style:none;}
+img{max-width:100%;display:block;}
+
+:root{
+  --primary:#d93b2b;
+  --primary-dark:#a82418;
+  --secondary:#f5a623;
+  --accent:#ff6b35;
+  --dark:#2b1a14;
+  --light:#fffaf3;
+  --gray:#6b6b6b;
+  --shadow:0 10px 30px rgba(217,59,43,.15);
+}
+
+.container{max-width:1200px;margin:0 auto;padding:0 20px;}
+
+/* ================= NAVBAR ================= */
+.navbar{
+  position:fixed;top:0;left:0;width:100%;
+  background:rgba(255,250,243,.95);
+  backdrop-filter:blur(10px);
+  z-index:1000;
+  transition:all .3s ease;
+  padding:15px 0;
+}
+.navbar.scrolled{
+  box-shadow:0 2px 20px rgba(0,0,0,.08);
+  padding:10px 0;
+}
+.nav-container{
+  display:flex;justify-content:space-between;align-items:center;
+  max-width:1200px;margin:0 auto;padding:0 20px;
+}
+.logo{
+  font-family:'Pacifico',cursive;
+  font-size:1.8rem;
+  color:var(--primary);
+  display:flex;align-items:center;gap:8px;
+}
+.logo span{font-size:1.6rem;}
+.nav-menu{display:flex;gap:35px;align-items:center;}
+.nav-menu a{
+  font-weight:500;font-size:.95rem;
+  position:relative;transition:color .3s;
+}
+.nav-menu a::after{
+  content:'';position:absolute;bottom:-5px;left:0;
+  width:0;height:2px;background:var(--primary);
+  transition:width .3s;
+}
+.nav-menu a:hover{color:var(--primary);}
+.nav-menu a:hover::after{width:100%;}
+.btn-cta{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff !important;padding:10px 22px;border-radius:50px;
+  font-weight:600;transition:all .3s;
+  box-shadow:0 5px 15px rgba(217,59,43,.3);
+}
+.btn-cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(217,59,43,.4);}
+.btn-cta::after{display:none;}
+.menu-toggle{
+  display:none;font-size:1.6rem;cursor:pointer;
+  background:none;border:none;color:var(--primary);
+}
+
+/* ================= HERO ================= */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:120px 0 60px;
+  background:
+    radial-gradient(circle at 80% 20%,rgba(245,166,35,.15),transparent 50%),
+    radial-gradient(circle at 20% 80%,rgba(217,59,43,.1),transparent 50%),
+    linear-gradient(135deg,#fffaf3 0%,#fff1dc 100%);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;top:10%;right:-5%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(245,166,35,.2),transparent);
+  animation:float 6s ease-in-out infinite;
+}
+@keyframes float{
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-20px);}
+}
+.hero-container{
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;
+  max-width:1200px;margin:0 auto;padding:0 20px;
+}
+.hero-text h4{
+  color:var(--primary);font-weight:600;
+  text-transform:uppercase;letter-spacing:2px;
+  font-size:.9rem;margin-bottom:15px;
+}
+.hero-text h1{
+  font-size:3.5rem;font-weight:800;line-height:1.1;
+  color:var(--dark);margin-bottom:20px;
+}
+.hero-text h1 .highlight{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  -webkit-background-clip:text;background-clip:text;
+  -webkit-text-fill-color:transparent;
+  font-family:'Pacifico',cursive;
+}
+.hero-text p{
+  font-size:1.1rem;color:var(--gray);
+  margin-bottom:30px;max-width:500px;
+}
+.hero-buttons{display:flex;gap:15px;flex-wrap:wrap;}
+.btn{
+  padding:14px 32px;border-radius:50px;
+  font-weight:600;font-size:1rem;cursor:pointer;
+  border:none;transition:all .3s;display:inline-flex;
+  align-items:center;gap:8px;
+}
+.btn-primary{
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;box-shadow:0 8px 20px rgba(217,59,43,.3);
+}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(217,59,43,.4);}
+.btn-secondary{
+  background:#fff;color:var(--primary);
+  border:2px solid var(--primary);
+}
+.btn-secondary:hover{background:var(--primary);color:#fff;}
+.hero-stats{
+  display:flex;gap:30px;margin-top:40px;
+  padding-top:30px;border-top:1px solid rgba(0,0,0,.08);
+}
+.stat-item h3{
+  font-size:2rem;color:var(--primary);font-weight:800;
+}
+.stat-item p{font-size:.85rem;color:var(--gray);margin:0;}
+
+.hero-image{
+  position:relative;display:flex;justify-content:center;align-items:center;
+}
+.hero-plate{
+  width:420px;height:420px;border-radius:50%;
+  background:linear-gradient(135deg,#fff,#ffe8c9);
+  display:flex;justify-content:center;align-items:center;
+  box-shadow:0 20px 60px rgba(217,59,43,.25);
+  position:relative;animation:float 4s ease-in-out infinite;
+}
+.hero-plate::before{
+  content:'';position:absolute;inset:20px;border-radius:50%;
+  border:3px dashed rgba(217,59,43,.2);
+}
+.plate-emoji{font-size:10rem;filter:drop-shadow(0 10px 20px rgba(0,0,0,.15));}
+.floating-badge{
+  position:absolute;background:#fff;padding:12px 18px;
+  border-radius:50px;box-shadow:0 10px 30px rgba(0,0,0,.1);
+  display:flex;align-items:center;gap:10px;font-weight:600;
+  font-size:.9rem;
+}
+.badge-1{top:10%;left:0;animation:float 3s ease-in-out infinite;}
+.badge-2{bottom:15%;right:0;animation:float 3s ease-in-out infinite .5s;}
+.badge-3{top:50%;right:-5%;animation:float 3s ease-in-out infinite 1s;}
+.badge-emoji{font-size:1.5rem;}
+
+/* ================= SECTION COMMON ================= */
+section{padding:80px 0;}
+.section-header{text-align:center;margin-bottom:60px;}
+.section-header h4{
+  color:var(--primary);font-weight:600;
+  text-transform:uppercase;letter-spacing:3px;
+  font-size:.9rem;margin-bottom:10px;
+}
+.section-header h2{
+  font-size:2.5rem;font-weight:800;color:var(--dark);
+  margin-bottom:15px;
+}
+.section-header p{color:var(--gray);max-width:600px;margin:0 auto;}
+
+/* ================= KEUNGGULAN ================= */
+.keunggulan{background:#fff;}
+.features-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:25px;
+}
+.feature-card{
+  background:#fffaf3;padding:35px 25px;border-radius:20px;
+  text-align:center;transition:all .4s;
+  border:2px solid transparent;
+}
+.feature-card:hover{
+  transform:translateY(-10px);
+  border-color:var(--primary);
+  box-shadow:var(--shadow);
+}
+.feature-icon{
+  width:70px;height:70px;margin:0 auto 20px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  border-radius:20px;display:flex;justify-content:center;align-items:center;
+  font-size:2rem;box-shadow:0 10px 25px rgba(217,59,43,.25);
+}
+.feature-card h3{font-size:1.2rem;margin-bottom:10px;color:var(--dark);}
+.feature-card p{color:var(--gray);font-size:.9rem;}
+
+/* ================= PRODUK ================= */
+.produk{
+  background:linear-gradient(180deg,#fff 0%,#fffaf3 100%);
+}
+.products-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:30px;
+}
+.product-card{
+  background:#fff;border-radius:25px;overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,.06);
+  transition:all .4s;position:relative;
+}
+.product-card:hover{transform:translateY(-10px);box-shadow:var(--shadow);}
+.product-image{
+  height:220px;
+  background:linear-gradient(135deg,#ffe8c9,#ffd4a0);
+  display:flex;justify-content:center;align-items:center;
+  font-size:6rem;position:relative;
+}
+.product-badge{
+  position:absolute;top:15px;right:15px;
+  background:var(--primary);color:#fff;
+  padding:5px 12px;border-radius:50px;
+  font-size:.75rem;font-weight:600;
+}
+.product-info{padding:25px;}
+.product-info h3{font-size:1.3rem;margin-bottom:8px;color:var(--dark);}
+.product-info .desc{color:var(--gray);font-size:.9rem;margin-bottom:15px;min-height:45px;}
+.product-footer{
+  display:flex;justify-content:space-between;align-items:center;
+}
+.price{font-size:1.4rem;font-weight:800;color:var(--primary);}
+.price small{font-size:.8rem;color:var(--gray);font-weight:400;}
+.btn-order{
+  background:var(--primary);color:#fff;
+  padding:8px 18px;border-radius:50px;
+  font-size:.85rem;font-weight:600;border:none;
+  cursor:pointer;transition:all .3s;
+}
+.btn-order:hover{background:var(--primary-dark);transform:scale(1.05);}
+
+/* ================= TESTIMONI ================= */
+.testimoni{background:#fff;}
+.testi-wrapper{position:relative;max-width:900px;margin:0 auto;}
+.testi-slider{overflow:hidden;}
+.testi-track{display:flex;transition:transform .5s ease;}
+.testi-card{
+  min-width:100%;padding:40px;
+  background:linear-gradient(135deg,#fffaf3,#fff1dc);
+  border-radius:25px;text-align:center;
+  box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+.testi-stars{color:var(--secondary);font-size:1.3rem;margin-bottom:15px;}
+.testi-text{
+  font-size:1.1rem;font-style:italic;color:var(--dark);
+  margin-bottom:25px;line-height:1.7;
+}
+.testi-author{display:flex;align-items:center;justify-content:center;gap:15px;}
+.testi-avatar{
+  width:60px;height:60px;border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#fff;display:flex;justify-content:center;align-items:center;
+  font-weight:700;font-size:1.3rem;
+}
+.testi-author-info{text-align:left;}
+.testi-author-info h4{font-size:1rem;color:var(--dark);}
+.testi-author-info p{font-size:.85rem;color:var(--gray);margin:0;}
+.testi-nav{
+  display:flex;justify-content:center;gap:10px;margin-top:30px;
+}
+.testi-dot{
+  width:12px;height:12px;border-radius:50%;
+  background:#ddd;border:none;cursor:pointer;
+  transition:all .3s;
+}
+.testi-dot.active{background:var(--primary);width:30px;border-radius:10px;}
+.testi-arrow{
+  position:absolute;top:50%;transform:translateY(-50%);
+  width:45px;height:45px;border-radius:50%;
+  background:#fff;border:none;cursor:pointer;
+  box-shadow:0 5px 15px rgba(0,0,0,.1);
+  font-size:1.2rem;color:var(--primary);
+  transition:all .3s;z-index:10;
+}
+.testi-arrow:hover{background:var(--primary);color:#fff;}
+.testi-arrow.prev{left:-25px;}
+.testi-arrow.next{right:-25px;}
+
+/* ================= KONTAK ================= */
+.kontak{
+  background:linear-gradient(135deg,var(--dark) 0%,#4a2a20 100%);
+  color:#fff;
+}
+.kontak .section-header h2{color:#fff;}
+.kontak .section-header p{color:rgba(255,255,255,.7);}
+.kontak-grid{
+  display:grid;grid-template-columns:1fr 1fr;gap:50px;
+}
+.kontak-info{display:flex;flex-direction:column;gap:25px;}
+.kontak-item{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:20px;background:rgba(255,255,255,.05);
+  border-radius:15px;border:1px solid rgba(255,255,255,.1);
+  transition:all .3s;
+}
+.kontak-item:hover{background:rgba(255,255,255,.1);transform:translateX(5px);}
+.kontak-icon{
+  width:50px;height:50px;border-radius:12px;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  display:flex;justify-content:center;align-items:center;
+  font-size:1.3rem;flex-shrink:0;
+}
+.kontak-item h4{font-size:1rem;margin-bottom:5px;}
+.kontak-item p{color:rgba(255,255,255,.7);font-size:.9rem;margin:0;}
+
+.kontak-form{
+  background:#fff;padding:35px;border-radius:25px;
+  color:var(--dark);
+}
+.kontak-form h3{font-size:1.4rem;margin-bottom:20px;color:var(--dark);}
+.form-group{margin-bottom:18px;}
+.form-group label{
+  display:block;font-size:.85rem;font-weight:500;
+  margin-bottom:6px;color:var(--dark);
+}
+.form-group input,.form-group textarea{
+  width:100%;padding:12px 15px;border:2px solid #eee;
+  border-radius:10px;font-family:inherit;font-size:.95rem;
+  transition:border-color .3s;
+}
+.form-group input:focus,.form-group textarea:focus{
+  outline:none;border-color:var(--primary);
+}
+.form-group textarea{resize:vertical;min-height:100px;}
+.form-msg{
+  padding:10px;border-radius:8px;margin-top:10px;
+  font-size:.9rem;display:none;
+}
+.form-msg.success{background:#d4edda;color:#155724;display:block;}
+.form-msg.error{background:#f8d7da;color:#721c24;display:block;}
+
+/* ================= FOOTER ================= */
+footer{
+  background:#1a0f0a;color:rgba(255,255,255,.7);
+  padding:60px 0 20px;
+}
+.footer-grid{
+  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
+  margin-bottom:40px;
+}
+.footer-col h4{color:#fff;margin-bottom:20px;font-size:1.1rem;}
+.footer-col p{font-size:.9rem;line-height:1.7;margin-bottom:15px;}
+.footer-col ul li{margin-bottom:10px;}
+.footer-col ul li a{
+  font-size:.9rem;transition:color .3s;
+}
+.footer-col ul li a:hover{color:var(--primary);}
+.social-links{display:flex;gap:12px;margin-top:15px;}
+.social-links a{
+  width:40px;height:40px;border-radius:50%;
+  background:rgba(255,255,255,.1);
+  display:flex;justify-content:center;align-items:center;
+  transition:all .3s;font-size:1.1rem;
+}
+.social-links a:hover{
+  background:var(--primary);transform:translateY(-3px);
+}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:20px;text-align:center;font-size:.85rem;
+}
+.footer-bottom span{color:var(--primary);font-weight:600;}
+
+/* ================= ANIMATIONS ================= */
+.fade-up{opacity:0;transform:translateY(30px);transition:all .8s ease;}
+.fade-up.visible{opacity:1;transform:translateY(0);}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:992px){
+  .hero-container,.kontak-grid{grid-template-columns:1fr;}
+  .hero-text{text-align:center;}
+  .hero-text p{margin:0 auto 30px;}
+  .hero-buttons,.hero-stats{justify-content:center;}
+  .hero-plate{width:320px;height:320px;margin:40px auto 0;}
+  .plate-emoji{font-size:7rem;}
+  .features-grid{grid-template-columns:repeat(2,1fr);}
+  .products-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:repeat(2,1fr);}
+  .testi-arrow.prev{left:10px;}
+  .testi-arrow.next{right:10px;}
+}
+@media(max-width:768px){
+  .menu-toggle{display:block;}
+  .nav-menu{
+    position:fixed;top:70px;right:-100%;
+    flex-direction:column;background:#fff;
+    width:80%;height:calc(100vh - 70px);
+    padding:40px 30px;gap:25px;
+    box-shadow:-5px 0 20px rgba(0,0,0,.1);
+    transition:right .3s;
+  }
+  .nav-menu.active{right:0;}
+  .hero-text h1{font-size:2.3rem;}
+  .section-header h2{font-size:1.8rem;}
+  .features-grid,.products-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;text-align:center;}
+  .social-links{justify-content:center;}
+  .hero-stats{flex-wrap:wrap;gap:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<nav class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="#home" class="logo"><span>🥟</span> Pampek Cihuyy</a>
+    <ul class="nav-menu" id="navMenu">
+      <li><a href="#home">Beranda</a></li>
+      <li><a href="#keunggulan">Keunggulan</a></li>
+      <li><a href="#produk">Produk</a></li>
+      <li><a href="#testimoni">Testimoni</a></li>
+      <li><a href="#kontak">Kontak</a></li>
+      <li><a href="#kontak" class="btn-cta">Pesan Sekarang</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle">☰</button>
+  </div>
+</nav>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <div class="hero-container">
+    <div class="hero-text fade-up">
+      <h4>🔥 Pampek Palembang Asli</h4>
+      <h1>Rasakan Sensasi <span class="highlight">Pampek Cihuyy</span> yang Bikin Nagih!</h1>
+      <p>Dibuat dari ikan tenggiri segar pilihan, bumbu rahasia turun-temurun, dan kuah cuko pedas manis yang khas. Sekali coba, pasti ketagihan!</p>
+      <div class="hero-buttons">
+        <a href="#produk" class="btn btn-primary">Pesan Sekarang 🛒</a>
+        <a href="#keunggulan" class="btn btn-secondary">Lihat Menu</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h3>10K+</h3>
+          <p>Pelanggan Puas</p>
+        </div>
+        <div class="stat-item">
+          <h3>15+</h3>
+          <p>Varian Produk</p>
+        </div>
+        <div class="stat-item">
+          <h3>4.9★</h3>
+          <p>Rating</p>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image fade-up">
+      <div class="hero-plate">
+        <div class="plate-emoji">🥟</div>
+      </div>
+      <div class="floating-badge badge-1">
+        <span class="badge-emoji">✅</span> 100% Halal
+      </div>
+      <div class="floating-badge badge-2">
+        <span class="badge-emoji">🐟</span> Ikan Segar
+      </div>
+      <div class="floating-badge badge-3">
+        <span class="badge-emoji">🌶️</span> Cuko Asli
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KEUNGGULAN ================= -->
+<section class="keunggulan" id="keunggulan">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>Kenapa Pilih Kami</h4>
+      <h2>Keunggulan Pampek Cihuyy</h2>
+      <p>Kami berkomitmen memberikan yang terbaik untuk setiap gigitan pampek yang Anda nikmati</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🐟</div>
+        <h3>Ikan Segar Pilihan</h3>
+        <p>Menggunakan ikan tenggiri segar setiap hari untuk tekstur dan rasa terbaik</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">✅</div>
+        <h3>100% Halal</h3>
+        <p>Telah bersertifikat halal MUI, aman dikonsumsi untuk seluruh keluarga</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🌿</div>
+        <h3>Tanpa Pengawet</h3>
+        <p>Diproses secara higienis tanpa bahan pengawet dan pewarna buatan</p>
+      </div>
+      <div class="feature-card fade-up">
+        <div class="feature-icon">🌶️</div>
+        <h3>Cuko Khas Palembang</h3>
+        <p>Kuah cuko dengan resep turun-temurun, pedas manis yang bikin nagih</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PRODUK ================= -->
+<section class="produk" id="produk">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>Menu Favorit</h4>
+      <h2>Produk Unggulan Kami</h2>
+      <p>Pilih varian pampek favorit Anda, semua dibuat fresh setiap hari</p>
+    </div>
+    <div class="products-grid">
+      <div class="product-card fade-up">
+        <div class="product-image">
+          🥟
+          <span class="product-badge">Best Seller</span>
+        </div>
+        <div class="product-info">
+          <h3>Kapal Selam</h3>
+          <p class="desc">Pampek berisi telur utuh, gurih dan kenyal. Favorit semua kalangan!</p>
+          <div class="product-footer">
+            <div class="price">Rp 12.000 <small>/pcs</small></div>
+            <button class="btn-order" onclick="orderProduct('Kapal Selam')">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-image">
+          🍥
+          <span class="product-badge">New</span>
+        </div>
+        <div class="product-info">
+          <h3>Lenjer Ikan</h3>
+          <p class="desc">Pampek panjang tanpa isi, tekstur kenyal cocok dicocol dengan cuko.</p>
+          <div class="product-footer">
+            <div class="price">Rp 25.000 <small>/porsi</small></div>
+            <button class="btn-order" onclick="orderProduct('Lenjer Ikan')">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-image">
+          🍘
+        </div>
+        <div class="product-info">
+          <h3>Adaan</h3>
+          <p class="desc">Pampek bulat lembut dengan bumbu bawang, empuk dan gurih.</p>
+          <div class="product-footer">
+            <div class="price">Rp 8.000 <small>/pcs</small></div>
+            <button class="btn-order" onclick="orderProduct('Adaan')">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-image">
+          🥚
+        </div>
+        <div class="product-info">
+          <h3>Kulit</h3>
+          <p class="desc">Pampek kulit renyah di luar, gurih di dalam. Cocok untuk pecinta tekstur!</p>
+          <div class="product-footer">
+            <div class="price">Rp 10.000 <small>/pcs</small></div>
+            <button class="btn-order" onclick="orderProduct('Kulit')">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-image">
+          🦐
+          <span class="product-badge">Premium</span>
+        </div>
+        <div class="product-info">
+          <h3>Keriting Udang</h3>
+          <p class="desc">Pampek keriting dengan campuran udang segar, rasa mewah di setiap gigitan.</p>
+          <div class="product-footer">
+            <div class="price">Rp 15.000 <small>/pcs</small></div>
+            <button class="btn-order" onclick="orderProduct('Keriting Udang')">Pesan</button>
+          </div>
+        </div>
+      </div>
+      <div class="product-card fade-up">
+        <div class="product-image">
+          🌶️
+        </div>
+        <div class="product-info">
+          <h3>Paket Cuko Spesial</h3>
+          <p class="desc">Botol cuko khas Palembang 500ml, pedas manis autentik untuk di rumah.</p>
+          <div class="product-footer">
+            <div class="price">Rp 35.000 <small>/botol</small></div>
+            <button class="btn-order" onclick="orderProduct('Cuko Spesial')">Pesan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TESTIMONI ================= -->
+<section class="testimoni" id="testimoni">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>Testimoni</h4>
+      <h2>Apa Kata Pelanggan Kami?</h2>
+      <p>Ribuan pelanggan telah merasakan kelezatan Pampek Cihuyy</p>
+    </div>
+    <div class="testi-wrapper fade-up">
+      <button class="testi-arrow prev" onclick="changeSlide(-1)">❮</button>
+      <div class="testi-slider">
+        <div class="testi-track" id="testiTrack">
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Pampeknya beneran enak! Ikan kerasa banget, cukonya pas pedes manisnya. Udah langganan 2 tahun, nggak pernah mengecewakan!"</p>
+            <div class="testi-author">
+              <div class="testi-avatar">SR</div>
+              <div class="testi-author-info">
+                <h4>Siti Rahayu</h4>
+                <p>Jakarta</p>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Sebagai orang Palembang asli, saya bilang ini pampek terenak di luar Palembang! Rasanya autentik, cuko-nya mantap!"</p>
+            <div class="testi-author">
+              <div class="testi-avatar">BP</div>
+              <div class="testi-author-info">
+                <h4>Budi Prakoso</h4>
+                <p>Bandung</p>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Pengiriman cepat, packaging rapi, dan rasanya juara! Anak-anak saya suka banget. Pasti order lagi!"</p>
+            <div class="testi-author">
+              <div class="testi-avatar">AM</div>
+              <div class="testi-author-info">
+                <h4>Anisa Maharani</h4>
+                <p>Surabaya</p>
+              </div>
+            </div>
+          </div>
+          <div class="testi-card">
+            <div class="testi-stars">★★★★★</div>
+            <p class="testi-text">"Kapal selamnya gede-gede, isinya full telur. Cuko-nya kental dan berasa rempahnya. Recommended banget!"</p>
+            <div class="testi-author">
+              <div class="testi-avatar">RH</div>
+              <div class="testi-author-info">
+                <h4>Rizky Hakim</h4>
+                <p>Yogyakarta</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="testi-arrow next" onclick="changeSlide(1)">❯</button>
+      <div class="testi-nav" id="testiNav"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= KONTAK ================= -->
+<section class="kontak" id="kontak">
+  <div class="container">
+    <div class="section-header fade-up">
+      <h4>Hubungi Kami</h4>
+      <h2>Pesan atau Tanya Dulu?</h2>
+      <p>Tim kami siap melayani pesanan dan pertanyaan Anda setiap hari</p>
+    </div>
+    <div class="kontak-grid">
+      <div class="kontak-info fade-up">
+        <div class="kontak-item">
+          <div class="kontak-icon">📍</div>
+          <div>
+            <h4>Alamat</h4>
+            <p>Jl. Demang Lebar Daun No. 88, Palembang, Sumatera Selatan</p>
+          </div>
+        </div>
+        <div class="kontak-item">
+          <div class="kontak-icon">📱</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>+62 812-3456-7890</p>
+          </div>
+        </div>
+        <div class="kontak-item">
+          <div class="kontak-icon">✉️</div>
+          <div>
+            <h4>Email</h4>
+            <p>halo@pampekcihuyy.id</p>
+          </div>
+        </div>
+        <div class="kontak-item">
+          <div class="kontak-icon">🕐</div>
+          <div>
+            <h4>Jam Operasional</h4>
+            <p>Senin - Minggu: 08.00 - 21.00 WIB</p>
+          </div>
+        </div>
+      </div>
+      <div class="kontak-form fade-up">
+        <h3>Kirim Pesan</h3>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email / No. HP</label>
+            <input type="text" id="email" name="email" placeholder="email@contoh.com / 08xxx" required>
+          </div>
+          <div class="form-group">
+            <label for="pesan">Pesan</label>
+            <textarea id="pesan" name="pesan" placeholder="Tulis pesanan atau pertanyaan Anda..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;">Kirim Pesan 📤</button>
+          <div class="form-msg" id="formMsg"></div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4 style="font-family:'Pacifico',cursive;font-size:1.6rem;color:var(--primary);">🥟 Pampek Cihuyy</h4>
+        <p>Pampek Palembang asli dengan cita rasa autentik. Dibuat dari bahan pilihan terbaik untuk keluarga Indonesia.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#keunggulan">Keunggulan</a></li>
+          <li><a href="#produk">Produk</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Produk</h4>
+        <ul>
+          <li><a href="#produk">Kapal Selam</a></li>
+          <li><a href="#produk">Lenjer Ikan</a></li>
+          <li><a href="#produk">Adaan</a></li>
+          <li><a href="#produk">Cuko Spesial</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <ul>
+          <li>📍 Palembang, Sumsel</li>
+          <li>📱 +62 812-3456-7890</li>
+          <li>✉️ halo@pampekcihuyy.id</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 <span>Pampek Cihuyy</span>. All Rights Reserved. Made with ❤️ di Palembang.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ================= NAVBAR SCROLL ================= */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+/* ================= MOBILE MENU ================= */
+const menuToggle = document.getElementById('menuToggle');
+const navMenu = document.getElementById('navMenu');
+menuToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('active');
+  menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+});
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    navMenu.classList.remove('active');
+    menuToggle.textContent = '☰';
+  });
+});
+
+/* ================= TESTIMONIAL SLIDER ================= */
+const track = document.getElementById('testiTrack');
+const slides = track.children;
+const totalSlides = slides.length;
+let currentSlide = 0;
+const navContainer = document.getElementById('testiNav');
+
+// Buat dots
+for (let i = 0; i < totalSlides; i++) {
+  const dot = document.createElement('button');
+  dot.classList.add('testi-dot');
+  if (i === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => goToSlide(i));
+  navContainer.appendChild(dot);
+}
+
+function goToSlide(index) {
+  currentSlide = index;
+  track.style.transform = `translateX(-${currentSlide * 100}%)`;
+  document.querySelectorAll('.testi-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === currentSlide);
+  });
+}
+
+function changeSlide(direction) {
+  let next = currentSlide + direction;
+  if (next < 0) next = totalSlides - 1;
+  if (next >= totalSlides) next = 0;
+  goToSlide(next);
+}
+
+// Auto slide
+setInterval(() => changeSlide(1), 5000);
+
+/* ================= FORM HANDLING ================= */
+const form = document.getElementById('contactForm');
+const formMsg = document.getElementById('formMsg');
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const nama = document.getElementById('nama').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const pesan = document.getElementById('pesan').value.trim();
+
+  if (!nama || !email || !pesan) {
+    formMsg.className = 'form-msg error';
+    formMsg.textContent = '⚠️ Mohon lengkapi semua field!';
+    return;
+  }
+
+  // Simulasi kirim (bisa diganti dengan fetch ke backend)
+  formMsg.className = 'form-msg success';
+  formMsg.textContent = `✅ Terima kasih ${nama}! Pesan Anda telah terkirim. Kami akan segera menghubungi Anda.`;
+  form.reset();
+  setTimeout(() => { formMsg.className = 'form-msg'; }, 5000);
+});
+
+/* ================= ORDER PRODUCT (WhatsApp) ================= */
+function orderProduct(productName) {
+  const message = encodeURIComponent(`Halo, saya ingin memesan ${productName} dari Pampek Cihuyy. Mohon info lebih lanjut.`);
+  window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+}
+
+/* ================= SCROLL ANIMATION ================= */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
